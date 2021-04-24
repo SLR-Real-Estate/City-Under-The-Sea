@@ -35,7 +35,7 @@ class ZameenScraper(scrapy.Spider):
     
     # crawler's entry point
     def start_requests(self):
-        # loop over the page range
+        # loop over the page range - this code doesn't loop over the last few pages because the URL changes for properties no longer available.
         for page in range(1, 705):
             # generate next page URL
             next_page = self.base_url + 'Karachi-2-' + str(page) + '.html'
